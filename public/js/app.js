@@ -1,5 +1,3 @@
- console.log("javaScript okie")
-
 
 
 const weatherForm=document.querySelector('form')
