@@ -40,7 +40,7 @@ app.get('/help',(req,res) =>{
 	res.render('help',{
 		title: 'Help',
 		name: 'Mukul Jataria',
-		msg: 'I am Here to help, But i suck at help People so it better you Try to get help from SomeWhere else, I hope you Got me.'
+		msg: 'I am Here to help, But I suck at Helping People, So It is better you Try to get Help from SomeWhere else, I Hope you Got me.'
 	})
 })
 
@@ -51,7 +51,7 @@ app.get('/weather',(req,res)=>{
 			error:'YOU MUST PROVIDE SEARCH-TERM'   
 		   })
 	}
-	geocode(req.query.address,(error,{Temp,speed,place,country})=>{
+	geocode(req.query.address,(error,{Temp,speed,place,country}={})=>{
 		if(error==undefined)
 		return res.send({
 			Temp:Temp,
