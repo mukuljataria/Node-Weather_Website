@@ -15,9 +15,20 @@ const geocode=(address, callback)=>{
                 //console.log('Unable to find location')
             }
             else
-            callback(undefined,body.main.temp)
+            callback(undefined,{
+                    Temp:body.main.temp,
+                    speed:body.wind.speed,
+                    place:body.name,
+                    country:body.sys.country})
            // console.log(response.body)
     })
 }
 
 module.exports=geocode
+
+
+// {
+//     Temp:body.main.temp,
+//     speed:body.wind.speed,
+//     place:body.name,
+//     country:body.sys.countr})

@@ -51,10 +51,13 @@ app.get('/weather',(req,res)=>{
 			error:'YOU MUST PROVIDE SEARCH-TERM'   
 		   })
 	}
-	geocode(req.query.address,(error,data)=>{
+	geocode(req.query.address,(error,{Temp,speed,place,country})=>{
 		if(error==undefined)
 		return res.send({
-			temp:data
+			Temp:Temp,
+			speed:speed,
+			Location:place,
+			Country:country
 		})
 		else{
 			return res.send({error})
